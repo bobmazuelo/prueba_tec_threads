@@ -37,7 +37,6 @@ class Consumidor(mp.Process):
                 if (self.queue.empty()):
                     self.lock.wait()
                 item = self.queue.get()
-                print(item)
             finally:
                 self.lock.release()
                 return self.funct(item)
